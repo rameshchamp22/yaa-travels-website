@@ -3,7 +3,7 @@ import { Users, Briefcase, Snowflake, ShieldCheck } from "lucide-react";
 
 export default function Fleet() {
   return (
-    <section className="bg-white py-20">
+    <section id="fleet" className="bg-white py-20">
       <div className="mx-auto max-w-7xl px-6">
 
         <div className="text-center">

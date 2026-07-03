@@ -7,11 +7,11 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    "Home",
-    "Services",
-    "Fleet",
-    "Destinations",
-    "Contact",
+    { name: "Home", href: "#home" },
+    { name: "Services", href: "#services" },
+    { name: "Fleet", href: "#fleet" },
+    { name: "Destinations", href: "#destinations" },
+    { name: "Contact", href: "#contact" },
   ];
 
   return (
@@ -39,11 +39,11 @@ export default function Navbar() {
         <nav className="hidden items-center gap-8 md:flex">
           {menuItems.map((item) => (
             <a
-              key={item}
-              href="#"
+              key={item.name}
+              href={item.href}
               className="font-medium text-gray-700 transition hover:text-blue-700"
             >
-              {item}
+              {item.name}
             </a>
           ))}
         </nav>
@@ -81,11 +81,11 @@ export default function Navbar() {
         <div className="border-t bg-white md:hidden">
           {menuItems.map((item) => (
             <a
-              key={item}
-              href="#"
+              key={item.name}
+              href={item.href}
               className="block px-6 py-4 hover:bg-gray-100"
             >
-              {item}
+              {item.name}
             </a>
           ))}
 

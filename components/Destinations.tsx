@@ -29,7 +29,7 @@ const destinations = [
 
 export default function Destinations() {
   return (
-    <section className="bg-slate-50 py-20">
+    <section id="destinations" className="bg-slate-50 py-20">
       <div className="mx-auto max-w-7xl px-6">
         <div className="text-center">
           <span className="rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
