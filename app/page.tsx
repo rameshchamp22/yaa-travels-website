@@ -4,6 +4,7 @@ import WhyChoose from "@/components/WhyChoose";
 import Services from "@/components/Services";
 import Fleet from "@/components/Fleet";
 import Footer from "@/components/Footer";
+import Destinations from "@/components/Destinations";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <WhyChoose />
       <Services />
       <Fleet />
+      <Destinations />
       <Footer />
     </>
   );
