@@ -1,16 +1,18 @@
 import Image from "next/image";
 import { Users, Briefcase, Snowflake, ShieldCheck } from "lucide-react";
+import SectionTitle from "./SectionTitle";
 
 export default function Fleet() {
   return (
     <section id="fleet" className="bg-white py-20">
       <div className="mx-auto max-w-7xl px-6">
 
-        <div className="text-center">
-          <span className="rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
-            Our Fleet
-          </span>
-
+        <SectionTitle
+          badge="Our Fleet"
+          title="Travel in Comfort"
+          subtitle="Comfortable, air-conditioned sedan perfect for airport transfers, outstation trips and family travel."
+        />
+{/* 
           <h2 className="mt-4 text-4xl font-bold">
             Swift Dzire Tour
           </h2>
@@ -19,7 +21,7 @@ export default function Fleet() {
             Comfortable, clean and reliable for airport transfers,
             outstation trips and family travel.
           </p>
-        </div>
+        </div> */}
 
         <div className="mt-16 grid items-center gap-14 md:grid-cols-2">
 

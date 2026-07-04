@@ -1,4 +1,5 @@
 import Image from "next/image";
+import SectionTitle from "./SectionTitle";
 
 const destinations = [
   {
@@ -31,46 +32,45 @@ export default function Destinations() {
   return (
     <section id="destinations" className="bg-slate-50 py-20">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="text-center">
-          <span className="rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
-            Popular Destinations
-          </span>
 
-          <h2 className="mt-4 text-4xl font-bold">
-            Travel Anywhere with Yaa Travels
-          </h2>
+        <SectionTitle
+          badge="Popular Destinations"
+          title="Travel Anywhere with Yaa Travels"
+          subtitle="Explore the most popular destinations from Coimbatore with safe, comfortable and affordable taxi services."
+        />
 
-          <p className="mt-4 text-gray-600">
-            Comfortable rides from Coimbatore to the most popular destinations.
-          </p>
-        </div>
-
-        <div className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {destinations.map((place) => (
             <div
               key={place.name}
-              className="overflow-hidden rounded-2xl bg-white shadow-md transition hover:-translate-y-2 hover:shadow-xl"
+              className="group overflow-hidden rounded-3xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
             >
-              <Image
-                src={place.image}
-                alt={place.name}
-                width={500}
-                height={300}
-                className="h-56 w-full object-cover"
-              />
+              <div className="overflow-hidden">
+                <Image
+                  src={place.image}
+                  alt={place.name}
+                  width={500}
+                  height={300}
+                  className="h-56 w-full object-cover transition duration-500 group-hover:scale-110"
+                />
+              </div>
 
               <div className="p-6">
-                <h3 className="text-2xl font-bold">{place.name}</h3>
+                <h3 className="text-2xl font-bold text-slate-900">
+                  {place.name}
+                </h3>
 
                 <p className="mt-2 text-gray-500">
                   Pickup from Coimbatore
                 </p>
 
                 <a
-                  href="https://wa.me/919788289050"
+                  href={`https://wa.me/919788289050?text=${encodeURIComponent(
+                    `Hello Yaa Travels, I would like to book a taxi from Coimbatore to ${place.name}. Please share the fare details.`
+                  )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 inline-block rounded-lg bg-green-600 px-6 py-3 font-semibold text-white hover:bg-green-700"
+                  className="mt-6 inline-block rounded-xl bg-green-600 px-6 py-3 font-semibold text-white transition hover:bg-green-700"
                 >
                   Book Now
                 </a>
@@ -78,6 +78,7 @@ export default function Destinations() {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
