@@ -10,7 +10,7 @@ export default function BookingForm() {
     drop: "",
     date: "",
     time: "",
-    passengers: "1",
+    passengers: "",
   });
 
   const handleChange = (
@@ -23,20 +23,24 @@ export default function BookingForm() {
   };
 
   const bookNow = () => {
-    const message = `🚖 *YAA TRAVELS BOOKING REQUEST*
+    const message = `Hello YAA TRAVELS,
 
-👤 Name: ${form.name}
-📱 Phone: ${form.phone}
+I would like to book a taxi.
 
-📍 Pickup: ${form.pickup}
-📍 Drop: ${form.drop}
+Name: ${form.name}
+Phone: ${form.phone}
 
-📅 Date: ${form.date}
-🕒 Time: ${form.time}
+Pickup Location: ${form.pickup}
+Drop Location: ${form.drop}
 
-👥 Passengers: ${form.passengers}
+Travel Date: ${form.date}
+Pickup Time: ${form.time}
 
-Please confirm the fare and booking availability.`;
+Passengers: ${form.passengers}
+
+Please share the fare details and confirm the booking.
+
+Thank you!`;
 
     window.open(
       `https://wa.me/919788289050?text=${encodeURIComponent(message)}`,
