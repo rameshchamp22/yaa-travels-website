@@ -1,3 +1,5 @@
+import Image from "next/image";
+import { motion } from "framer-motion";
 import {
   Phone,
   MessageCircle,
@@ -11,15 +13,33 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-gradient-to-br from-[#0F172A] via-[#155EEF] to-[#2563EB] text-white"
+      className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-blue-900 to-blue-600 text-white"
     >
       {/* Background Glow */}
 
-      <div className="absolute -left-24 top-20 h-72 w-72 rounded-full bg-cyan-400/20 blur-3xl"></div>
+      {/* Premium Background */}
 
-      <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-blue-300/20 blur-3xl"></div>
+      <div className="absolute inset-0 overflow-hidden">
 
-      <div className="mx-auto max-w-7xl px-6 pt-44 pb-24">
+        <div className="absolute -left-32 top-0 h-[500px] w-[500px] rounded-full bg-cyan-400/20 blur-[120px]" />
+
+        <div className="absolute right-0 top-0 h-[450px] w-[450px] rounded-full bg-blue-500/20 blur-[120px]" />
+
+        <div className="absolute bottom-0 left-1/2 h-[350px] w-[350px] -translate-x-1/2 rounded-full bg-indigo-500/20 blur-[120px]" />
+
+        <div
+          className="absolute inset-0 opacity-[0.05]"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
+            backgroundSize: "48px 48px",
+          }}
+        />
+
+      </div>
+
+
+      <div className="mx-auto max-w-7xl px-6 pt-48 pb-44">
 
         <div className="grid items-center gap-12 lg:grid-cols-2">
 
@@ -34,31 +54,21 @@ export default function Hero() {
               <Car size={18} />
 
               <span className="text-sm font-semibold">
-                Premium Taxi Service
+                Trusted by 500+ Happy Travelers
               </span>
 
             </div>
 
             {/* Heading */}
 
-            <h1 className="mt-8 text-5xl font-extrabold leading-tight lg:text-7xl">
+            <h1 className="mt-8 text-5xl font-black leading-tight lg:text-7xl">
 
-              Travel
+              Travel Beyond
 
-              <br />
+              <span className="mt-2 block bg-gradient-to-r from-cyan-300 via-white to-yellow-300 bg-clip-text text-transparent">
 
-              <span className="text-yellow-400">
-                SAFE,
-              </span>
+                Expectations
 
-              <br />
-
-              Travel
-
-              <br />
-
-              <span className="text-cyan-300">
-                SMART
               </span>
 
             </h1>
@@ -87,20 +97,17 @@ export default function Hero() {
 
             {/* Description */}
 
-            <p className="mt-8 max-w-xl text-lg leading-8 text-blue-100">
+            Premium taxi services from
 
-              Safe, reliable and affordable taxi services from
-              <span className="font-semibold text-white">
-                {" "}Coimbatore{" "}
-              </span>
+            <span className="font-semibold text-white">
+              {" "}Coimbatore{" "}
+            </span>
 
-              to destinations across
+            for airport transfers, outstation trips, corporate travel and family vacations across
 
-              <span className="font-semibold text-white">
-                {" "}Tamil Nadu, Kerala & Karnataka.
-              </span>
-
-            </p>
+            <span className="font-semibold text-white">
+              {" "}Tamil Nadu, Kerala, Andra & Karnataka.
+            </span>
 
             {/* Buttons */}
 
@@ -110,7 +117,7 @@ export default function Hero() {
                 href="https://wa.me/919788289050"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 rounded-2xl bg-green-500 px-8 py-4 font-bold shadow-xl transition duration-300 hover:scale-105 hover:bg-green-600"
+                className="flex items-center gap-3 rounded-2xl bg-green-500 px-8 py-5 font-bold shadow-xl transition duration-300 hover:scale-105 hover:bg-green-600"
               >
                 <MessageCircle size={22} />
                 Book on WhatsApp
@@ -118,7 +125,7 @@ export default function Hero() {
 
               <a
                 href="tel:+919788289050"
-                className="flex items-center gap-3 rounded-2xl border border-white px-8 py-4 font-bold transition hover:bg-white hover:text-blue-700"
+                className="flex items-center gap-3 rounded-2xl border border-white px-8 py-5 font-bold transition hover:bg-white hover:text-blue-700"
               >
                 <Phone size={22} />
                 Call Now
@@ -174,10 +181,13 @@ export default function Hero() {
 
             <div className="absolute h-72 w-72 rounded-full bg-cyan-400/30 blur-3xl"></div>
 
-            <img
+            <Image
               src="/images/dzire.png"
               alt="Swift Dzire Tour"
-              className="relative z-10 w-full max-w-xl animate-float drop-shadow-[0_25px_45px_rgba(0,0,0,0.45)]"
+              width={700}
+              height={450}
+              priority
+              className="relative z-10 w-full max-w-xl animate-float drop-shadow-[0_30px_60px_rgba(0,0,0,0.45)]"
             />
 
           </div>
