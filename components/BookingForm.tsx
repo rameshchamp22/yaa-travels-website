@@ -34,6 +34,24 @@ export default function BookingForm() {
   };
 
   const bookNow = () => {
+    const required = [form.name, form.phone, form.pickup, form.drop, form.date, form.time, form.passengers];
+    if (required.some((value) => !value.trim())) {
+      window.alert("Please complete all booking fields before continuing.");
+      return;
+    }
+
+    const digits = form.phone.replace(/\D/g, "");
+    if (!(digits.length === 10 || (digits.length === 12 && digits.startsWith("91")))) {
+      window.alert("Please enter a valid 10-digit Indian mobile number.");
+      return;
+    }
+
+    const pickupDateTime = new Date(`${form.date}T${form.time}`);
+    if (Number.isNaN(pickupDateTime.getTime()) || pickupDateTime <= new Date()) {
+      window.alert("Please choose a future pickup date and time.");
+      return;
+    }
+
     const message = `Hello YAA TRAVELS,
 
 I would like to book a taxi.
@@ -124,6 +142,9 @@ Thank you!`;
 
             <input
               name="phone"
+              type="tel"
+              inputMode="tel"
+              autoComplete="tel"
               placeholder="Phone Number"
               value={form.phone}
               onChange={handleChange}
@@ -228,7 +249,6 @@ Thank you!`;
               <option value="2">2 Passengers</option>
               <option value="3">3 Passengers</option>
               <option value="4">4 Passengers</option>
-              <option value="5+">5+ Passengers</option>
             </select>
 
           </div>

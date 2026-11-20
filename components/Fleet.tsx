@@ -94,7 +94,7 @@ export default function Fleet() {
 
               <span className="font-bold text-green-700">
 
-                Starting From ₹13 / KM
+                Starting From ₹16 / KM
 
               </span>
 
