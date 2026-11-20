@@ -142,6 +142,9 @@ Thank you!`;
 
             <input
               name="phone"
+              type="tel"
+              inputMode="tel"
+              autoComplete="tel"
               placeholder="Phone Number"
               value={form.phone}
               onChange={handleChange}
@@ -246,7 +249,6 @@ Thank you!`;
               <option value="2">2 Passengers</option>
               <option value="3">3 Passengers</option>
               <option value="4">4 Passengers</option>
-              <option value="5+">5+ Passengers</option>
             </select>
 
           </div>
