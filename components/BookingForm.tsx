@@ -40,7 +40,7 @@ export default function BookingForm() {
       return;
     }
 
-    const digits = form.phone.replace(/\\D/g, "");
+    const digits = form.phone.replace(/\D/g, "");
     if (!(digits.length === 10 || (digits.length === 12 && digits.startsWith("91")))) {
       window.alert("Please enter a valid 10-digit Indian mobile number.");
       return;
